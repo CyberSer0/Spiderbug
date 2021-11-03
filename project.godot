@@ -11,6 +11,10 @@ config_version=4
 [application]
 
 config/name="Spiderbug"
+<<<<<<< Updated upstream
+=======
+run/main_scene="res://Scenes/Levels/Main.tscn"
+>>>>>>> Stashed changes
 config/icon="res://icon.png"
 
 [physics]
