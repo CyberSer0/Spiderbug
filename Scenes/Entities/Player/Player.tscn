@@ -9,10 +9,10 @@ friction = 0.12
 bounce = 1.0
 absorbent = true
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=2]
 radius = 45.0019
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -21,62 +21,103 @@ animations = [ {
 } ]
 
 [node name="Player" type="RigidBody2D"]
+position = Vector2( -0.840881, 0.840912 )
 collision_mask = 12
 mode = 2
-mass = 6.97
 physics_material_override = SubResource( 1 )
-gravity_scale = 10.0
+gravity_scale = 3.0
 contact_monitor = true
 linear_damp = 10.774
+applied_force = Vector2( 100, 0 )
 script = ExtResource( 8 )
 
-[node name="Leg1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 30.919, -31.2594 )
+[node name="Legs" type="Node2D" parent="."]
+
+[node name="Leg1" parent="Legs" instance=ExtResource( 1 )]
+position = Vector2( 19.5593, -40 )
 rotation = -1.0472
 
-[node name="Leg2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 40, 20 )
-rotation = 0.785397
+[node name="Leg2" parent="Legs" instance=ExtResource( 1 )]
+position = Vector2( 40, -22.5 )
+rotation = -0.261799
 
-[node name="Leg3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -31.1182, -31.2991 )
+[node name="Leg3" parent="Legs" instance=ExtResource( 1 )]
+position = Vector2( 40, 21.9964 )
+rotation = 0.261799
+
+[node name="Leg4" parent="Legs" instance=ExtResource( 1 )]
+position = Vector2( 19.6839, 40.0447 )
+rotation = 1.0472
+
+[node name="Leg5" parent="Legs" instance=ExtResource( 1 )]
+position = Vector2( -19.6936, -39.9985 )
 rotation = -2.09439
 
-[node name="Leg4" parent="." instance=ExtResource( 1 )]
-position = Vector2( -40, 18.7099 )
-rotation = -3.92699
+[node name="Leg6" parent="Legs" instance=ExtResource( 1 )]
+position = Vector2( -39.9839, -22.5846 )
+rotation = -2.87979
+
+[node name="Leg7" parent="Legs" instance=ExtResource( 1 )]
+position = Vector2( -40, 22.0107 )
+rotation = 2.8798
+
+[node name="Leg8" parent="Legs" instance=ExtResource( 1 )]
+position = Vector2( -19.5738, 40 )
+rotation = 2.0944
 
 [node name="MainBodyCollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 7 )
+frames = SubResource( 3 )
 
-[node name="PinLeg1" type="PinJoint2D" parent="."]
-position = Vector2( 31.0436, -31.2594 )
-rotation = 0.261799
-node_a = NodePath("..")
-node_b = NodePath("../Leg1/Leg")
+[node name="Pins" type="Node2D" parent="."]
 
-[node name="PinLeg2" type="PinJoint2D" parent="."]
-position = Vector2( 40, 20 )
-rotation = 0.785397
-node_a = NodePath("..")
-node_b = NodePath("../Leg2/Leg")
+[node name="PinLeg1" type="PinJoint2D" parent="Pins"]
+position = Vector2( 19.6839, -40 )
+node_a = NodePath("../..")
+node_b = NodePath("../../Legs/Leg1/Leg")
 
-[node name="PinLeg3" type="PinJoint2D" parent="."]
-position = Vector2( -31.149, -31.3006 )
-rotation = -0.261799
-node_a = NodePath("..")
-node_b = NodePath("../Leg3/Leg")
+[node name="PinLeg2" type="PinJoint2D" parent="Pins"]
+position = Vector2( 40, -22.5 )
+node_a = NodePath("../..")
+node_b = NodePath("../../Legs/Leg2/Leg")
 
-[node name="PinLeg4" type="PinJoint2D" parent="."]
-position = Vector2( -40.0161, 18.7099 )
-rotation = -0.785397
-node_a = NodePath("..")
-node_b = NodePath("../Leg4/Leg")
+[node name="PinLeg3" type="PinJoint2D" parent="Pins"]
+position = Vector2( 40, 21.9964 )
+node_a = NodePath("../..")
+node_b = NodePath("../../Legs/Leg3/Leg")
 
-[editable path="Leg1"]
-[editable path="Leg2"]
-[editable path="Leg3"]
-[editable path="Leg4"]
+[node name="PinLeg4" type="PinJoint2D" parent="Pins"]
+position = Vector2( 19.6839, 40.0447 )
+node_a = NodePath("../..")
+node_b = NodePath("../../Legs/Leg4/Leg")
+
+[node name="PinLeg5" type="PinJoint2D" parent="Pins"]
+position = Vector2( -19.7244, -40 )
+node_a = NodePath("../..")
+node_b = NodePath("../../Legs/Leg5/Leg")
+
+[node name="PinLeg6" type="PinJoint2D" parent="Pins"]
+position = Vector2( -40, -22.5846 )
+node_a = NodePath("../..")
+node_b = NodePath("../../Legs/Leg6/Leg")
+
+[node name="PinLeg7" type="PinJoint2D" parent="Pins"]
+position = Vector2( -40.0346, 21.9964 )
+node_a = NodePath("../..")
+node_b = NodePath("../../Legs/Leg7/Leg")
+
+[node name="PinLeg8" type="PinJoint2D" parent="Pins"]
+position = Vector2( -19.6051, 40.0447 )
+node_a = NodePath("../..")
+node_b = NodePath("../../Legs/Leg8/Leg")
+
+[editable path="Legs/Leg1"]
+[editable path="Legs/Leg2"]
+[editable path="Legs/Leg3"]
+[editable path="Legs/Leg4"]
+[editable path="Legs/Leg5"]
+[editable path="Legs/Leg6"]
+[editable path="Legs/Leg7"]
+[editable path="Legs/Leg8"]

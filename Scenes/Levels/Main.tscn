@@ -32,9 +32,11 @@ margin_left = -248.0
 margin_top = -136.0
 margin_right = 248.0
 margin_bottom = 136.0
+rect_pivot_offset = Vector2( 248, 136 )
 color = Color( 0.164706, 0.0901961, 0.00784314, 1 )
 __meta__ = {
-"_edit_lock_": true
+"_edit_lock_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="Wall2" type="StaticBody2D" parent="."]
