@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Entities/Player/Player.tscn" type="PackedScene" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 248, 136 )
@@ -10,6 +12,9 @@ extents = Vector2( 248, 56 )
 extents = Vector2( 296, 136 )
 
 [node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 140, 391 )
 
 [node name="Wall1" type="StaticBody2D" parent="."]
 position = Vector2( 248, 136 )
