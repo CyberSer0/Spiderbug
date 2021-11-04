@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 var direction = Vector2()
-var speed = 7.5
+var speed = 75
 
 
 func _physics_process(delta):

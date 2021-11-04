@@ -14,10 +14,12 @@ extents = Vector2( 296, 136 )
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 140, 391 )
+position = Vector2( 801.651, 528.673 )
 
 [node name="Wall1" type="StaticBody2D" parent="."]
 position = Vector2( 248, 136 )
+collision_layer = 4
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
 shape = SubResource( 1 )
@@ -37,6 +39,8 @@ __meta__ = {
 
 [node name="Wall2" type="StaticBody2D" parent="."]
 position = Vector2( 248, 568 )
+collision_layer = 4
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
 shape = SubResource( 2 )
@@ -59,6 +63,8 @@ __meta__ = {
 
 [node name="Wall3" type="StaticBody2D" parent="."]
 position = Vector2( 984, 136 )
+collision_layer = 4
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
 shape = SubResource( 3 )

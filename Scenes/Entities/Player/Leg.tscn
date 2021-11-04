@@ -1,0 +1,154 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Sprites/Spiderbug_right_fleg.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Spiderbug_right_grabber.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Spiderbug_right_leg.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Entities/Player/Leg.gd" type="Script" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 16.9099
+height = 120.631
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 10.6103
+height = 74.9119
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 243.01
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 8.72179
+height = 23.5291
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Leg" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Leg" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+gravity_scale = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leg"]
+position = Vector2( 60, 0 )
+rotation = 1.5708
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Leg"]
+frames = SubResource( 2 )
+offset = Vector2( 59, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FLeg" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+gravity_scale = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLeg"]
+position = Vector2( 162.215, 3.1498 )
+rotation = 1.5708
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="FLeg"]
+position = Vector2( 126.937, 2.20486 )
+frames = SubResource( 4 )
+offset = Vector2( 34, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Grabber" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 12
+gravity_scale = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallDetector" type="Area2D" parent="Grabber"]
+visible = false
+gravity_vec = Vector2( 0, 0 )
+gravity = 0.0
+collision_layer = 2
+collision_mask = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabber/WallDetector"]
+position = Vector2( -0.0378876, 0.200012 )
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabber"]
+position = Vector2( 224.463, 3.56762 )
+rotation = 1.5708
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Grabber"]
+position = Vector2( 224.76, 2.97302 )
+frames = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FLegPin" type="PinJoint2D" parent="."]
+position = Vector2( 126.627, 2.45579 )
+node_a = NodePath("../Leg")
+node_b = NodePath("../FLeg")
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GrabberPin" type="PinJoint2D" parent="."]
+position = Vector2( 207.128, 3.00339 )
+rotation = -1.5708
+node_a = NodePath("../FLeg")
+node_b = NodePath("../Grabber")
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="body_entered" from="Grabber/WallDetector" to="." method="_on_WallDetector_body_entered"]

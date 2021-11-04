@@ -1,42 +1,20 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Assets/SpriteFrames/left_grabber_spriteframe.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://Assets/SpriteFrames/left_fleg_spriteframes.tres" type="SpriteFrames" id=3]
-[ext_resource path="res://Assets/SpriteFrames/right_fleg_spriteframe.tres" type="SpriteFrames" id=4]
-[ext_resource path="res://Assets/SpriteFrames/right_leg_spriteframes.tres" type="SpriteFrames" id=5]
-[ext_resource path="res://Assets/SpriteFrames/right_grabber_spriteframe.tres" type="SpriteFrames" id=6]
-[ext_resource path="res://Assets/SpriteFrames/left_leg_spriteframes.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://Scenes/Entities/Player/Leg.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/Spiderbug_mainbody.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Entities/Player/Player.gd" type="Script" id=8]
 
-[sub_resource type="PhysicsMaterial" id=3]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.12
 bounce = 1.0
 absorbent = true
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 20.0719, 3.18237 )
+[sub_resource type="CircleShape2D" id=6]
+radius = 45.0019
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 54.6232, 5.81454 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 62.9168, 9.2611 )
-
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 40.0
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 1 ), null ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -45,325 +23,60 @@ animations = [ {
 [node name="Player" type="RigidBody2D"]
 collision_mask = 12
 mode = 2
-physics_material_override = SubResource( 3 )
+mass = 6.97
+physics_material_override = SubResource( 1 )
 gravity_scale = 10.0
 contact_monitor = true
-linear_damp = 1.0
+linear_damp = 10.774
 script = ExtResource( 8 )
 
-[node name="Leg1" type="RigidBody2D" parent="."]
-collision_layer = 3
-collision_mask = 4
+[node name="Leg1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 30.919, -31.2594 )
+rotation = -1.0472
 
-[node name="GrabberCollisionShape" type="CollisionShape2D" parent="Leg1"]
-position = Vector2( 267.964, -22.02 )
-shape = SubResource( 5 )
+[node name="Leg2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 40, 20 )
+rotation = 0.785397
 
-[node name="GrabberSprite" type="AnimatedSprite" parent="Leg1/GrabberCollisionShape"]
-position = Vector2( -20.1859, 0 )
-scale = Vector2( 0.632772, 0.0925682 )
-frames = ExtResource( 6 )
-offset = Vector2( 32, 0 )
+[node name="Leg3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -31.1182, -31.2991 )
+rotation = -2.09439
 
-[node name="FLegCollisionShape" type="CollisionShape2D" parent="Leg1"]
-position = Vector2( 200.121, -22.02 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 6 )
-
-[node name="FLegSprite" type="AnimatedSprite" parent="Leg1/FLegCollisionShape"]
-position = Vector2( -54.7202, 0 )
-scale = Vector2( 1.71171, 0.1792 )
-frames = ExtResource( 4 )
-offset = Vector2( 32, 0 )
-
-[node name="LegCollisionShape" type="CollisionShape2D" parent="Leg1"]
-position = Vector2( 84.7733, -22.4169 )
-shape = SubResource( 7 )
-
-[node name="LegSprite" type="AnimatedSprite" parent="Leg1/LegCollisionShape"]
-position = Vector2( -64.0913, 0.396851 )
-scale = Vector2( 2.01693, 0.32 )
-frames = ExtResource( 5 )
-offset = Vector2( 32, 0 )
-
-[node name="Leg2" type="RigidBody2D" parent="."]
-collision_layer = 3
-collision_mask = 4
-
-[node name="GrabberCollisionShape" type="CollisionShape2D" parent="Leg2"]
-position = Vector2( 267.964, -0.0200005 )
-shape = SubResource( 5 )
-
-[node name="Grabber" type="AnimatedSprite" parent="Leg2/GrabberCollisionShape"]
-position = Vector2( -20.1855, 0.0200006 )
-scale = Vector2( 0.632772, 0.0925682 )
-frames = ExtResource( 6 )
-offset = Vector2( 32, 0 )
-
-[node name="FLegCollisionShape" type="CollisionShape2D" parent="Leg2"]
-position = Vector2( 200.121, -0.0200005 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 6 )
-
-[node name="FLeg" type="AnimatedSprite" parent="Leg2/FLegCollisionShape"]
-position = Vector2( -54.7207, 0.0200006 )
-scale = Vector2( 1.71171, 0.1792 )
-frames = ExtResource( 4 )
-offset = Vector2( 32, 0 )
-
-[node name="LegCollisionShape" type="CollisionShape2D" parent="Leg2"]
-position = Vector2( 84.7733, -0.416851 )
-shape = SubResource( 7 )
-
-[node name="Leg" type="AnimatedSprite" parent="Leg2/LegCollisionShape"]
-position = Vector2( -64.0918, 0.416851 )
-scale = Vector2( 2.01693, 0.32 )
-frames = ExtResource( 5 )
-offset = Vector2( 32, 0 )
-
-[node name="Leg3" type="RigidBody2D" parent="."]
-collision_layer = 3
-collision_mask = 4
-
-[node name="GrabberCollisionShape" type="CollisionShape2D" parent="Leg3"]
-position = Vector2( 267.964, 21.73 )
-shape = SubResource( 5 )
-
-[node name="Grabber" type="AnimatedSprite" parent="Leg3/GrabberCollisionShape"]
-position = Vector2( -19.9878, 0.109709 )
-scale = Vector2( 0.632772, 0.0925682 )
-frames = ExtResource( 6 )
-offset = Vector2( 32, 0 )
-
-[node name="FLegCollisionShape" type="CollisionShape2D" parent="Leg3"]
-position = Vector2( 200.121, 21.73 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 6 )
-
-[node name="FLeg" type="AnimatedSprite" parent="Leg3/FLegCollisionShape"]
-position = Vector2( -54.5222, 0.109709 )
-scale = Vector2( 1.71171, 0.1792 )
-frames = ExtResource( 3 )
-offset = Vector2( 32, 0 )
-
-[node name="LegCollisionShape" type="CollisionShape2D" parent="Leg3"]
-position = Vector2( 84.7733, 21.3331 )
-shape = SubResource( 7 )
-
-[node name="Leg" type="AnimatedSprite" parent="Leg3/LegCollisionShape"]
-position = Vector2( -63.8934, 0.506559 )
-scale = Vector2( 2.01693, 0.32 )
-frames = ExtResource( 5 )
-offset = Vector2( 32, 0 )
-
-[node name="Leg4" type="RigidBody2D" parent="."]
-collision_layer = 3
-collision_mask = 4
-
-[node name="GrabberCollisionShape" type="CollisionShape2D" parent="Leg4"]
-position = Vector2( -268.291, -22.02 )
-shape = SubResource( 5 )
-
-[node name="Grabber" type="AnimatedSprite" parent="Leg4/GrabberCollisionShape"]
-position = Vector2( 20.4657, 0 )
-scale = Vector2( 0.6336, 0.0926464 )
-frames = ExtResource( 2 )
-offset = Vector2( -32, 0 )
-
-[node name="FLegCollisionShape" type="CollisionShape2D" parent="Leg4"]
-position = Vector2( -201.026, -22.02 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 6 )
-
-[node name="FLeg" type="AnimatedSprite" parent="Leg4/FLegCollisionShape"]
-position = Vector2( 55.6203, 0 )
-scale = Vector2( 1.71243, 0.1792 )
-frames = SubResource( 4 )
-offset = Vector2( -32, 0 )
-
-[node name="LegCollisionShape" type="CollisionShape2D" parent="Leg4"]
-position = Vector2( -84.6521, -22.4169 )
-shape = SubResource( 7 )
-
-[node name="Leg" type="AnimatedSprite" parent="Leg4/LegCollisionShape"]
-position = Vector2( 63.9701, 0.396851 )
-scale = Vector2( 2.017, 0.32 )
-frames = ExtResource( 7 )
-offset = Vector2( -32, 0 )
-
-[node name="Leg5" type="RigidBody2D" parent="."]
-collision_layer = 3
-collision_mask = 4
-
-[node name="GrabberCollisionShape" type="CollisionShape2D" parent="Leg5"]
-position = Vector2( -268.291, -0.406376 )
-shape = SubResource( 5 )
-
-[node name="Grabber" type="AnimatedSprite" parent="Leg5/GrabberCollisionShape"]
-position = Vector2( 20.4657, 0.0317955 )
-scale = Vector2( 0.6336, 0.0926464 )
-frames = ExtResource( 2 )
-offset = Vector2( -32, 0 )
-
-[node name="FLegCollisionShape" type="CollisionShape2D" parent="Leg5"]
-position = Vector2( -201.026, -0.406376 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 6 )
-
-[node name="FLeg" type="AnimatedSprite" parent="Leg5/FLegCollisionShape"]
-position = Vector2( 55.6203, 0.0317955 )
-scale = Vector2( 1.71243, 0.1792 )
-frames = ExtResource( 3 )
-offset = Vector2( -32, 0 )
-
-[node name="LegCollisionShape" type="CollisionShape2D" parent="Leg5"]
-position = Vector2( -84.6521, -0.803226 )
-shape = SubResource( 7 )
-
-[node name="Leg" type="AnimatedSprite" parent="Leg5/LegCollisionShape"]
-position = Vector2( 63.9701, 0.428646 )
-scale = Vector2( 2.017, 0.32 )
-frames = ExtResource( 7 )
-offset = Vector2( -32, 0 )
-
-[node name="Leg6" type="RigidBody2D" parent="."]
-collision_layer = 3
-collision_mask = 4
-
-[node name="GrabberCollisionShape" type="CollisionShape2D" parent="Leg6"]
-position = Vector2( -268.291, 21.6188 )
-shape = SubResource( 5 )
-
-[node name="Grabber" type="AnimatedSprite" parent="Leg6/GrabberCollisionShape"]
-position = Vector2( 20.4657, -0.175819 )
-scale = Vector2( 0.6336, 0.0926464 )
-frames = ExtResource( 2 )
-offset = Vector2( -32, 0 )
-
-[node name="FLegCollisionShape" type="CollisionShape2D" parent="Leg6"]
-position = Vector2( -201.026, 21.6188 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 6 )
-
-[node name="FLeg" type="AnimatedSprite" parent="Leg6/FLegCollisionShape"]
-position = Vector2( 55.6203, -0.175819 )
-scale = Vector2( 1.71243, 0.1792 )
-frames = ExtResource( 3 )
-offset = Vector2( -32, 0 )
-
-[node name="LegCollisionShape" type="CollisionShape2D" parent="Leg6"]
-position = Vector2( -84.6521, 21.222 )
-shape = SubResource( 7 )
-
-[node name="Leg" type="AnimatedSprite" parent="Leg6/LegCollisionShape"]
-position = Vector2( 63.9701, 0.221031 )
-scale = Vector2( 2.017, 0.32 )
-frames = ExtResource( 7 )
-offset = Vector2( -32, 0 )
+[node name="Leg4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -40, 18.7099 )
+rotation = -3.92699
 
 [node name="MainBodyCollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="MainBodyCollisionShape"]
-frames = SubResource( 2 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 7 )
 
-[node name="Skeleton2D" type="Skeleton2D" parent="."]
+[node name="PinLeg1" type="PinJoint2D" parent="."]
+position = Vector2( 31.0436, -31.2594 )
+rotation = 0.261799
+node_a = NodePath("..")
+node_b = NodePath("../Leg1/Leg")
 
-[node name="BodyLeg1" type="Bone2D" parent="Skeleton2D"]
-rotation = -0.785397
-rest = Transform2D( 0.707108, -0.707106, 0.707106, 0.707108, 0, 0 )
-default_length = 31.0
-
-[node name="Leg" type="Bone2D" parent="Skeleton2D/BodyLeg1"]
-position = Vector2( 31.0001, -0.193247 )
+[node name="PinLeg2" type="PinJoint2D" parent="."]
+position = Vector2( 40, 20 )
 rotation = 0.785397
-rest = Transform2D( 0.707108, 0.707106, -0.707106, 0.707108, 31.0001, -0.193247 )
-default_length = 126.0
+node_a = NodePath("..")
+node_b = NodePath("../Leg2/Leg")
 
-[node name="FLeg" type="Bone2D" parent="Skeleton2D/BodyLeg1/Leg"]
-position = Vector2( 127.68, 0 )
-rest = Transform2D( 1, 0, 0, 1, 127.68, 0 )
-default_length = 103.0
+[node name="PinLeg3" type="PinJoint2D" parent="."]
+position = Vector2( -31.149, -31.3006 )
+rotation = -0.261799
+node_a = NodePath("..")
+node_b = NodePath("../Leg3/Leg")
 
-[node name="BodyLeg2" type="Bone2D" parent="Skeleton2D"]
+[node name="PinLeg4" type="PinJoint2D" parent="."]
+position = Vector2( -40.0161, 18.7099 )
 rotation = -0.785397
-rest = Transform2D( 0.707108, -0.707106, 0.707106, 0.707108, 0, 0 )
-default_length = 31.0
+node_a = NodePath("..")
+node_b = NodePath("../Leg4/Leg")
 
-[node name="Leg" type="Bone2D" parent="Skeleton2D/BodyLeg2"]
-position = Vector2( 15.4035, 15.4034 )
-rotation = 0.785397
-rest = Transform2D( 0.707108, 0.707106, -0.707106, 0.707108, 15.4035, 15.4034 )
-default_length = 126.0
-
-[node name="FLeg" type="Bone2D" parent="Skeleton2D/BodyLeg2/Leg"]
-position = Vector2( 127.68, 0 )
-rest = Transform2D( 1, 0, 0, 1, 127.68, 0 )
-default_length = 103.0
-
-[node name="BodyLeg3" type="Bone2D" parent="Skeleton2D"]
-rotation = -0.785397
-rest = Transform2D( 0.707108, -0.707106, 0.707106, 0.707108, 0, 0 )
-default_length = 31.0
-
-[node name="Leg" type="Bone2D" parent="Skeleton2D/BodyLeg3"]
-position = Vector2( -0.170432, 30.9774 )
-rotation = 0.785397
-rest = Transform2D( 0.707108, 0.707106, -0.707106, 0.707108, -0.170432, 30.9774 )
-default_length = 126.0
-
-[node name="FLeg" type="Bone2D" parent="Skeleton2D/BodyLeg3/Leg"]
-position = Vector2( 127.68, 0 )
-rest = Transform2D( 1, 0, 0, 1, 127.68, 0 )
-default_length = 103.0
-
-[node name="BodyLeg4" type="Bone2D" parent="Skeleton2D"]
-rotation = -0.785397
-rest = Transform2D( 0.707108, -0.707106, 0.707106, 0.707108, 0, 0 )
-default_length = 31.0
-
-[node name="Leg" type="Bone2D" parent="Skeleton2D/BodyLeg4"]
-position = Vector2( 0.972256, -30.2211 )
-rotation = 0.785397
-rest = Transform2D( 0.707108, 0.707106, -0.707106, 0.707108, 0.972256, -30.2211 )
-default_length = 126.0
-
-[node name="FLeg" type="Bone2D" parent="Skeleton2D/BodyLeg4/Leg"]
-position = Vector2( -129.088, 7.62939e-06 )
-rotation = -3.14159
-rest = Transform2D( -1, -4.44253e-06, 4.44253e-06, -1, -129.088, 7.62939e-06 )
-default_length = 103.0
-
-[node name="BodyLeg5" type="Bone2D" parent="Skeleton2D"]
-rotation = -0.785397
-rest = Transform2D( 0.707108, -0.707106, 0.707106, 0.707108, 0, 0 )
-default_length = 31.0
-
-[node name="Leg" type="Bone2D" parent="Skeleton2D/BodyLeg5"]
-position = Vector2( -13.9937, -15.255 )
-rotation = 0.785397
-rest = Transform2D( 0.707108, 0.707106, -0.707106, 0.707108, -13.9937, -15.255 )
-default_length = 126.0
-
-[node name="FLeg" type="Bone2D" parent="Skeleton2D/BodyLeg5/Leg"]
-position = Vector2( -129.088, 7.62939e-06 )
-rotation = -3.14159
-rest = Transform2D( -1, -4.44253e-06, 4.44253e-06, -1, -129.088, 7.62939e-06 )
-default_length = 103.0
-
-[node name="BodyLeg6" type="Bone2D" parent="Skeleton2D"]
-rotation = -0.785397
-rest = Transform2D( 0.707108, -0.707106, 0.707106, 0.707108, 0, 0 )
-default_length = 31.0
-
-[node name="Leg" type="Bone2D" parent="Skeleton2D/BodyLeg6"]
-position = Vector2( -30.1983, 0.949583 )
-rotation = 0.785397
-rest = Transform2D( 0.707108, 0.707106, -0.707106, 0.707108, -30.1983, 0.949583 )
-default_length = 126.0
-
-[node name="FLeg" type="Bone2D" parent="Skeleton2D/BodyLeg6/Leg"]
-position = Vector2( -129.088, 7.62939e-06 )
-rotation = -3.14159
-rest = Transform2D( -1, -4.44253e-06, 4.44253e-06, -1, -129.088, 7.62939e-06 )
-default_length = 103.0
+[editable path="Leg1"]
+[editable path="Leg2"]
+[editable path="Leg3"]
+[editable path="Leg4"]
