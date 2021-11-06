@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Sprites/Spiderbug_right_fleg.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/Spiderbug_right_grabber.png" type="Texture" id=2]
@@ -29,14 +29,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=5]
-radius = 135.565
-
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 8.72179
 height = 23.5291
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -101,20 +98,10 @@ gravity_scale = 0.5
 contacts_reported = 1
 contact_monitor = true
 
-[node name="Navigation2D" type="Navigation2D" parent="Grabber"]
-
-[node name="WallDetector" type="Area2D" parent="Grabber"]
-gravity_vec = Vector2( 0, 0 )
-gravity = 0.0
-collision_layer = 2
-collision_mask = 4
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabber/WallDetector"]
+[node name="WallDetector" type="RayCast2D" parent="Grabber"]
 position = Vector2( 224.495, 3.61241 )
-shape = SubResource( 5 )
+cast_to = Vector2( 50, 0 )
+collision_mask = 4
 __meta__ = {
 "_edit_lock_": true
 }
@@ -122,14 +109,14 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabber"]
 position = Vector2( 224.463, 3.56762 )
 rotation = 1.5708
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Grabber"]
 position = Vector2( 224.76, 2.97302 )
-frames = SubResource( 7 )
+frames = SubResource( 6 )
 
 [node name="FLegPin" type="PinJoint2D" parent="."]
 position = Vector2( 126.627, 2.45579 )
@@ -159,4 +146,3 @@ stiffness = 64.0
 
 [connection signal="body_entered" from="Grabber" to="." method="_on_Grabber_body_entered"]
 [connection signal="body_exited" from="Grabber" to="." method="_on_Grabber_body_exited"]
-[connection signal="body_entered" from="Grabber/WallDetector" to="." method="_on_WallDetector_body_entered"]

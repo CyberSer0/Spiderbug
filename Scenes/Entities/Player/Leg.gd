@@ -13,12 +13,8 @@ var latched_on = false
 func _physics_process(delta):
 	if closestWall != null:
 		direction = position.direction_to(closestWall.position)
-	if !latched_on:
+	if !latched_on and wallDetector.is_colliding():
 		grabber.set_applied_force(direction * 1000)
-
-func _on_WallDetector_body_entered(body):
-	if body.get_collision_layer() == 4:
-		closestWall = body
 
 
 func _on_Grabber_body_entered(body):
