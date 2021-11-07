@@ -1,6 +1,5 @@
 extends Node2D
 
-onready var wallDetector = get_node("Grabber/WallDetector")
 onready var leg = get_node("Leg")
 onready var fleg = get_node("FLeg")
 onready var grabber = get_node("Grabber")
@@ -13,8 +12,7 @@ var latched_on = false
 func _physics_process(delta):
 	if closestWall != null:
 		direction = position.direction_to(closestWall.position)
-	if !latched_on and wallDetector.is_colliding():
-		grabber.set_applied_force(direction * 1000)
+	grabber.set_applied_force(direction * 1000)
 
 
 func _on_Grabber_body_entered(body):
