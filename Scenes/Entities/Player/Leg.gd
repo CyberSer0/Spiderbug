@@ -11,8 +11,18 @@ var latched_on = false
 
 func _physics_process(delta):
 	if closestWall != null:
+<<<<<<< Updated upstream
 		direction = position.direction_to(closestWall.position)
 	grabber.set_applied_force(direction * 1000)
+=======
+		direction = -position.direction_to(closestWall.position)
+	if !latched_on:
+		grabber.set_applied_force(direction * 1000)
+
+func _on_WallDetector_body_entered(body):
+	if body.get_collision_layer() == 4:
+		closestWall = body
+>>>>>>> Stashed changes
 
 
 func _on_Grabber_body_entered(body):
