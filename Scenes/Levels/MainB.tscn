@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Entities/PlayerB/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Levels/sciana.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120.773, 43.3546 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 570.862, -183.737 )
+scale = Vector2( 6.07779, 5.77233 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 712.339, 403.46 )
+scale = Vector2( 10.96, 5.08 )
+
+[node name="Node2D6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1125.5, -49.2198 )
+scale = Vector2( 9.72, 12.32 )
+
+[node name="Node2D8" parent="." instance=ExtResource( 2 )]
+position = Vector2( -83.8844, -461.306 )
+scale = Vector2( 9.72, 12.32 )
+
+[node name="Node2D7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 614.871, -716.62 )
+scale = Vector2( 9.72, 12.32 )
+
+[node name="Node2D4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 230.724, 323.797 )
+
+[node name="Node2D5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 353.527, 91.3364 )
