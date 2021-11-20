@@ -17,3 +17,5 @@ func _process(delta):
 		self.linear_velocity = Vector2(0,vel)
 	else:
 		self.mass = 0.01
+	var poz = get_parent().get_node("noga1").global_position
+	get_node("../Skeleton2D/Bone2D/Bone2D/Bone2D").global_position = poz
