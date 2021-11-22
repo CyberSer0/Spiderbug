@@ -1,11 +1,16 @@
 extends RigidBody2D
 
-export var vel = 300
+export var vel = 900
+var kosci = []
+var kostki = []
 
 func _ready():
+	for i in range(8):
+		kosci.append(get_node("Skeleton2D/Bone2D/" + String(i)))
+		kostki.append(get_node("Skeleton2D/Bone2D/" + String(i) + "/" + String(i)))
 	set_process(true)
 
-func _process(delta):
+func _process(_delta):
 	self.mass = 2
 	if Input.is_action_pressed("move_left"):
 		self.linear_velocity = Vector2(-vel,0)
@@ -17,5 +22,7 @@ func _process(delta):
 		self.linear_velocity = Vector2(0,vel)
 	else:
 		self.mass = 0.01
-	var poz = get_parent().get_node("noga1").global_position
-	get_node("../Skeleton2D/Bone2D/Bone2D/Bone2D").global_position = poz
+	for i in range(8):
+		var poz = get_parent().get_node("noga" + String(i+1)).get_global_position()
+		kosci[i].set_rotation(self.global_position.direction_to(poz).angle())
+		kostki[i].set_scale(Vector2(kostki[i].get_global_position().distance_to(poz)/70, 1))

@@ -11,7 +11,6 @@ config_version=4
 [application]
 
 config/name="Spiderbug"
-run/main_scene="res://Scenes/Levels/Main.tscn"
 config/icon="res://icon.png"
 
 [display]
