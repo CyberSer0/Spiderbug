@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Entities/PlayerB/gracz.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 30 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 400.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -290,6 +293,15 @@ disabled = true
 modulate = Color( 0.827451, 0, 1, 1 )
 texture = ExtResource( 1 )
 
+[node name="Area2D" type="Area2D" parent="gracz"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gracz/Area2D"]
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="gracz/Area2D"]
+wait_time = 0.1
+one_shot = true
+
 [node name="noga1" type="RigidBody2D" parent="."]
 position = Vector2( 101.495, -132.481 )
 __meta__ = {
@@ -427,3 +439,5 @@ softness = 16.0
 node_a = NodePath("../gracz")
 node_b = NodePath("../noga8")
 softness = 16.0
+
+[connection signal="body_exited" from="gracz/Area2D" to="gracz" method="_on_Area2D_body_exited"]

@@ -26,3 +26,12 @@ func _process(_delta):
 		var poz = get_parent().get_node("noga" + String(i+1)).get_global_position()
 		kosci[i].set_rotation(self.global_position.direction_to(poz).angle())
 		kostki[i].set_scale(Vector2(kostki[i].get_global_position().distance_to(poz)/70, 1))
+
+func _on_Area2D_body_exited(body):
+	for i in range(8):
+		if body.name == "noga" + String(i+1):
+			body.get_node("CollisionShape2D").set_deferred("disabled", true)
+			get_node("Area2D/Timer").start()
+			yield(get_node("Area2D/Timer"), "timeout")
+			body.get_node("CollisionShape2D").set_deferred("disabled", false)
+			break
