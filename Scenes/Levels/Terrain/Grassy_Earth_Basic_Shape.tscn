@@ -1,0 +1,223 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" type="Script" id=1]
+[ext_resource path="res://addons/rmsmartshape/normal_range.gd" type="Script" id=2]
+[ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=3]
+[ext_resource path="res://addons/rmsmartshape/materials/edge_material.gd" type="Script" id=4]
+[ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=5]
+[ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=6]
+[ext_resource path="res://addons/rmsmartshape/materials/shape_material.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Textures/Earth/fill.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/Earth/grass_center.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/Earth/grass_left.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/Earth/grass_right.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/Earth/side.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/Earth/bottom_center.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Textures/Earth/bottom_left.png" type="Texture" id=14]
+[ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Textures/Earth/bottom_right.png" type="Texture" id=16]
+
+[sub_resource type="Resource" id=44]
+script = ExtResource( 5 )
+texture_idx = -1
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=45]
+script = ExtResource( 3 )
+position = Vector2( 28.4125, 24.5522 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 44 )
+
+[sub_resource type="Resource" id=46]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=47]
+script = ExtResource( 3 )
+position = Vector2( -23.832, 24.2301 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 46 )
+
+[sub_resource type="Resource" id=48]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=49]
+script = ExtResource( 3 )
+position = Vector2( 26.3742, -29.4859 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 48 )
+
+[sub_resource type="Resource" id=50]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=51]
+script = ExtResource( 3 )
+position = Vector2( -25.8899, -28.6838 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 50 )
+
+[sub_resource type="Resource" id=52]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=53]
+script = ExtResource( 3 )
+position = Vector2( 26.3742, -29.4859 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 52 )
+
+[sub_resource type="Resource" id=54]
+script = ExtResource( 6 )
+_points = {
+2: SubResource( 45 ),
+7: SubResource( 47 ),
+13: SubResource( 49 ),
+18: SubResource( 51 ),
+30: SubResource( 53 )
+}
+_point_order = [ 13, 2, 7, 18, 30 ]
+_constraints = {
+[ 13, 30 ]: 15
+}
+_next_key = 31
+_material_overrides = {
+}
+
+[sub_resource type="Resource" id=35]
+script = ExtResource( 4 )
+textures = [ ExtResource( 12 ) ]
+texture_normals = [  ]
+textures_corner_outer = [  ]
+textures_corner_inner = [  ]
+texture_normals_corner_outer = [  ]
+texture_normals_corner_inner = [  ]
+textures_taper_left = [  ]
+textures_taper_right = [  ]
+texture_normals_taper_left = [  ]
+texture_normals_taper_right = [  ]
+randomize_texture = false
+use_corner_texture = false
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id=36]
+script = ExtResource( 2 )
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2( 0, 0 )
+
+[sub_resource type="Resource" id=37]
+script = ExtResource( 1 )
+edge_material = SubResource( 35 )
+normal_range = SubResource( 36 )
+weld = true
+render = true
+z_index = -9
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id=38]
+script = ExtResource( 4 )
+textures = [ ExtResource( 9 ) ]
+texture_normals = [  ]
+textures_corner_outer = [  ]
+textures_corner_inner = [  ]
+texture_normals_corner_outer = [  ]
+texture_normals_corner_inner = [  ]
+textures_taper_left = [ ExtResource( 10 ) ]
+textures_taper_right = [ ExtResource( 11 ) ]
+texture_normals_taper_left = [  ]
+texture_normals_taper_right = [  ]
+randomize_texture = false
+use_corner_texture = false
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id=39]
+script = ExtResource( 2 )
+begin = 45.0
+distance = 90.0
+edgeRendering = Vector2( 0, 0 )
+
+[sub_resource type="Resource" id=40]
+script = ExtResource( 1 )
+edge_material = SubResource( 38 )
+normal_range = SubResource( 39 )
+weld = true
+render = true
+z_index = 1
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id=41]
+script = ExtResource( 4 )
+textures = [ ExtResource( 13 ) ]
+texture_normals = [  ]
+textures_corner_outer = [  ]
+textures_corner_inner = [  ]
+texture_normals_corner_outer = [  ]
+texture_normals_corner_inner = [  ]
+textures_taper_left = [ ExtResource( 14 ) ]
+textures_taper_right = [ ExtResource( 16 ) ]
+texture_normals_taper_left = [  ]
+texture_normals_taper_right = [  ]
+randomize_texture = false
+use_corner_texture = false
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id=42]
+script = ExtResource( 2 )
+begin = 225.0
+distance = 90.0
+edgeRendering = Vector2( 0, 0 )
+
+[sub_resource type="Resource" id=43]
+script = ExtResource( 1 )
+edge_material = SubResource( 41 )
+normal_range = SubResource( 42 )
+weld = true
+render = true
+z_index = -8
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id=23]
+script = ExtResource( 7 )
+_edge_meta_materials = [ SubResource( 37 ), SubResource( 40 ), SubResource( 43 ) ]
+fill_textures = [ ExtResource( 8 ) ]
+fill_texture_normals = [  ]
+fill_texture_z_index = -10
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[node name="Grassy_Earth_Basic_Shape" type="Node2D"]
+
+[node name="SS2D_Shape_Closed" type="Node2D" parent="."]
+script = ExtResource( 15 )
+_points = SubResource( 54 )
+material_overrides = null
+shape_material = SubResource( 23 )
+tessellation_stages = 5
+tessellation_tolerence = 4.0
+flip_edges = false
+render_edges = true
+collision_size = 32.0
+collision_offset = 0.0
+collision_polygon_node_path = NodePath("")
