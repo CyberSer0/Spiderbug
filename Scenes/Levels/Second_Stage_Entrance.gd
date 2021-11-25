@@ -17,6 +17,7 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	print("body entered")
+	print(body.name)
 	if body.name == "gracz":
+		print("body entered")
 		ChangeScene.change_scene("res://Scenes/Levels/Second_Stage.tscn", 0.5)
