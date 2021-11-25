@@ -177,8 +177,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Spiderbug"
-run/main_scene="res://Scenes/Levels/Main.tscn"
+run/main_scene="res://Scenes/Levels/First_Stage.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+ChangeScene="*res://Scenes/Levels/Scripts/Change_Scene.gd"
 
 [display]
 

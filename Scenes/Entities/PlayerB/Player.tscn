@@ -6,10 +6,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.8691, 15.9248 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Player" type="Node2D"]
 
 [node name="gracz" type="RigidBody2D" parent="."]
+collision_mask = 4
 gravity_scale = 0.0
+contact_monitor = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
