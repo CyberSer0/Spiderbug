@@ -1,0 +1,151 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=1]
+[ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=2]
+[ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=3]
+[ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=4]
+[ext_resource path="res://addons/rmsmartshape/materials/edge_material.gd" type="Script" id=5]
+[ext_resource path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" type="Script" id=6]
+[ext_resource path="res://addons/rmsmartshape/materials/shape_material.gd" type="Script" id=7]
+[ext_resource path="res://addons/rmsmartshape/normal_range.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Textures/Building/edge.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/Building/fill.png" type="Texture" id=10]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+position = Vector2( 200, -100 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 1 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 1 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 4 )
+position = Vector2( 200.422, 100.157 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 3 )
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 1 )
+texture_idx = 1
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 4 )
+position = Vector2( -200, 100 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 5 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 1 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 4 )
+position = Vector2( 200, -100 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 7 )
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 1 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 4 )
+position = Vector2( -200, -100 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 9 )
+
+[sub_resource type="Resource" id=11]
+script = ExtResource( 2 )
+_points = {
+0: SubResource( 2 ),
+1: SubResource( 4 ),
+2: SubResource( 6 ),
+3: SubResource( 8 ),
+4: SubResource( 10 )
+}
+_point_order = [ 0, 1, 2, 4, 3 ]
+_constraints = {
+[ 0, 3 ]: 15
+}
+_next_key = 6
+_material_overrides = {
+}
+
+[sub_resource type="Resource" id=12]
+script = ExtResource( 5 )
+textures = [ ExtResource( 9 ) ]
+texture_normals = [  ]
+textures_corner_outer = [  ]
+textures_corner_inner = [  ]
+texture_normals_corner_outer = [  ]
+texture_normals_corner_inner = [  ]
+textures_taper_left = [  ]
+textures_taper_right = [  ]
+texture_normals_taper_left = [  ]
+texture_normals_taper_right = [  ]
+randomize_texture = false
+use_corner_texture = false
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id=13]
+script = ExtResource( 8 )
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2( 0, 0 )
+
+[sub_resource type="Resource" id=14]
+script = ExtResource( 6 )
+edge_material = SubResource( 12 )
+normal_range = SubResource( 13 )
+weld = true
+render = true
+z_index = 5
+z_as_relative = true
+offset = -1.5
+
+[sub_resource type="Resource" id=15]
+script = ExtResource( 7 )
+_edge_meta_materials = [ SubResource( 14 ) ]
+fill_textures = [ ExtResource( 10 ) ]
+fill_texture_normals = [  ]
+fill_texture_z_index = -10
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[node name="Basic_Brick" type="Node2D"]
+
+[node name="SS2D_Shape_Closed" type="Node2D" parent="."]
+script = ExtResource( 3 )
+_points = SubResource( 11 )
+material_overrides = null
+shape_material = SubResource( 15 )
+tessellation_stages = 5
+tessellation_tolerence = 4.0
+flip_edges = false
+render_edges = true
+collision_size = 32.0
+collision_offset = 0.0
+collision_polygon_node_path = NodePath("")
