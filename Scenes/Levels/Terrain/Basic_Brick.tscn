@@ -122,7 +122,7 @@ edge_material = SubResource( 12 )
 normal_range = SubResource( 13 )
 weld = true
 render = true
-z_index = 5
+z_index = 6
 z_as_relative = true
 offset = -1.5
 
@@ -131,13 +131,14 @@ script = ExtResource( 7 )
 _edge_meta_materials = [ SubResource( 14 ) ]
 fill_textures = [ ExtResource( 10 ) ]
 fill_texture_normals = [  ]
-fill_texture_z_index = -10
+fill_texture_z_index = 5
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
 [node name="Basic_Brick" type="Node2D"]
 
 [node name="SS2D_Shape_Closed" type="Node2D" parent="."]
+z_index = 10
 script = ExtResource( 3 )
 _points = SubResource( 11 )
 material_overrides = null
