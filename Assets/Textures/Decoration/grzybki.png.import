@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flower_temp.png-7315f554dd98ec069603b8f185a2f5ad.stex"
+path="res://.import/grzybki.png-6c0dc7f4b3311f283faca654aaff6acc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/flower_temp.png"
-dest_files=[ "res://.import/flower_temp.png-7315f554dd98ec069603b8f185a2f5ad.stex" ]
+source_file="res://Assets/Textures/Decoration/grzybki.png"
+dest_files=[ "res://.import/grzybki.png-6c0dc7f4b3311f283faca654aaff6acc.stex" ]
 
 [params]
 

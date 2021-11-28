@@ -183,6 +183,11 @@ config/icon="res://icon.png"
 [autoload]
 
 ChangeScene="*res://Scenes/Levels/Scripts/Change_Scene.gd"
+Bufor="*res://Scenes/Entities/Scripts/Bufor.gd"
+
+[debug]
+
+settings/fps/force_fps=60
 
 [display]
 
