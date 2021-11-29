@@ -13,6 +13,7 @@ func _ready():
 func _physics_process(delta):
 	if(self.get_collider()):
 		current_point_pos = self.get_collision_point()
+		
 		var random
 		if Bufor.player_closest_points[current_raycast_nr] == Vector2():
 			Bufor.player_closest_points[current_raycast_nr] = current_point_pos
