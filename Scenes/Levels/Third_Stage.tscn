@@ -26,7 +26,8 @@
 [ext_resource path="res://Scenes/Levels/Terrain/Basic_Stone_Brick.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Scenes/Levels/Terrain/Earthy_Earth_Basic_Shape.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/Textures/Light/light.png" type="Texture" id=26]
-[ext_resource path="res://Scenes/Levels/WatchingEye.gd" type="Script" id=27]
+[ext_resource path="res://Scenes/Levels/Scripts/WatchingEye.gd" type="Script" id=27]
+
 
 [sub_resource type="Resource" id=2850]
 script = ExtResource( 6 )

@@ -25,7 +25,7 @@ extents = Vector2( 9.02917, 4.21801 )
 collision_mask = 4
 mode = 2
 mass = 2.0
-gravity_scale = 0.0
+gravity_scale = 40.42
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -41,8 +41,8 @@ uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
 bones = [ "Bone2D", PoolRealArray( 0, 0, 0, 0 ), "Bone2D/0", PoolRealArray( 1, 1, 1, 1 ), "Bone2D/0/0", PoolRealArray( 0, 0, 0, 0 ) ]
 
 [node name="Polygon2D2" type="Polygon2D" parent="gracz"]
-position = Vector2( 160.996, 35.6709 )
-offset = Vector2( -70.9961, -60.6709 )
+position = Vector2( 90.0075, -0.0984917 )
+offset = Vector2( 0, -25 )
 texture = ExtResource( 1 )
 texture_offset = Vector2( 10, 0 )
 texture_scale = Vector2( 0.5, 1 )
@@ -275,7 +275,6 @@ current = true
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="gracz"]
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="gracz"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kostki.png-1d6f04836e3a6c073ea99bdcb6f09817.stex"
+path="res://.import/Spider_Leg_Tip.png-913901f04905234412d2726066dba5d2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Decoration/kostki.png"
-dest_files=[ "res://.import/kostki.png-1d6f04836e3a6c073ea99bdcb6f09817.stex" ]
+source_file="res://Assets/Textures/Player/Spider_Leg_Tip.png"
+dest_files=[ "res://.import/Spider_Leg_Tip.png-913901f04905234412d2726066dba5d2.stex" ]
 
 [params]
 
