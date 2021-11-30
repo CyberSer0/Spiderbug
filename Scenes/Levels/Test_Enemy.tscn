@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Entities/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Entities/Enemy_Gecko_v1/Gecko.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 248, 136 )
@@ -18,14 +17,10 @@ extents = Vector2( 97.6498, 12.6713 )
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1183.66, 430.944 )
-
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 297.612, 318.872 )
-scale = Vector2( 1, 1 )
+position = Vector2( 801.651, 528.673 )
 
 [node name="Wall1" type="StaticBody2D" parent="."]
-position = Vector2( 737.145, 698.568 )
+position = Vector2( 248, 136 )
 collision_layer = 4
 collision_mask = 9
 
@@ -48,7 +43,7 @@ __meta__ = {
 }
 
 [node name="Wall2" type="StaticBody2D" parent="."]
-position = Vector2( 249.587, 556.888 )
+position = Vector2( 248, 568 )
 collision_layer = 4
 collision_mask = 9
 
@@ -72,7 +67,7 @@ __meta__ = {
 }
 
 [node name="Wall3" type="StaticBody2D" parent="."]
-position = Vector2( 1345.7, 159.163 )
+position = Vector2( 984, 136 )
 collision_layer = 4
 collision_mask = 9
 
