@@ -113,6 +113,7 @@ radius = 16.1941
 position = Vector2( 0, 2037.5 )
 
 [node name="World_Walls" type="Node2D" parent="."]
+visible = false
 position = Vector2( 150, 400 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="World_Walls"]

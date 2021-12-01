@@ -1,7 +1,7 @@
 [gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Entities/PlayerC/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Entities/PlayerB/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Textures/flower.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Levels/Scripts/Second_Stage_Entrance.gd" type="Script" id=4]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=5]
@@ -475,5 +475,6 @@ __meta__ = {
 }
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1.72125, -61.9657 )
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
