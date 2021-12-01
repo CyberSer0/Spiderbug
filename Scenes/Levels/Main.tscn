@@ -2,7 +2,9 @@
 
 [ext_resource path="res://Scenes/Entities/PlayerB/Player.tscn" type="PackedScene" id=1]
 
-[node name="Main" type="Node2D"]
+[node name="Node2D3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 740.312, 579.289 )
+scale = Vector2( 10.96, 5.08 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 3.77972, -212.927 )

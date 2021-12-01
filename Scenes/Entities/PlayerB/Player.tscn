@@ -12,6 +12,7 @@
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 15.4397, 15.8228 )
 
+
 [sub_resource type="CircleShape2D" id=2]
 radius = 400.0
 
@@ -25,6 +26,7 @@ collision_mask = 4
 mode = 2
 mass = 2.0
 gravity_scale = 40.42
+
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -201,6 +203,7 @@ bones = [ "Bone2D", PoolRealArray( 0, 0, 0, 0 ), "Bone2D/0", PoolRealArray( 0, 0
 [node name="Skeleton2D" type="Skeleton2D" parent="gracz"]
 visible = false
 
+
 [node name="Bone2D" type="Bone2D" parent="gracz/Skeleton2D"]
 rest = Transform2D( 1, 0, 0, 1, 0, 0 )
 
@@ -213,6 +216,7 @@ position = Vector2( 82, 0 )
 rest = Transform2D( 1, 0, 0, 1, 82, 0 )
 default_length = 63.0
 
+
 [node name="1" type="Bone2D" parent="gracz/Skeleton2D/Bone2D"]
 position = Vector2( 4, 0 )
 rest = Transform2D( 1, 0, 0, 1, 4, 0 )
@@ -221,6 +225,7 @@ rest = Transform2D( 1, 0, 0, 1, 4, 0 )
 position = Vector2( 82, 0 )
 rest = Transform2D( 1, 0, 0, 1, 82, 0 )
 default_length = 63.0
+
 
 [node name="2" type="Bone2D" parent="gracz/Skeleton2D/Bone2D"]
 position = Vector2( 4, 0 )
@@ -384,6 +389,7 @@ position = Vector2( 150, 0 )
 collision_layer = 2
 collision_mask = 4
 script = ExtResource( 8 )
+
 __meta__ = {
 "_edit_group_": true
 }
@@ -392,6 +398,7 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="noga2"]
+
 texture = ExtResource( 5 )
 
 [node name="noga3" type="RigidBody2D" parent="."]
