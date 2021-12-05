@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Entities/PlayerC/gracz.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Player/Spider_Leg_Base.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Player/Spiderbug_mainbody.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Light/light.png" type="Texture" id=9]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 22.3336
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 20.4856, 19.9489 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 400.0
+
+[node name="Player" type="Node2D"]
+
+[node name="butt" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="butt"]
+position = Vector2( 0, -10.301 )
+shape = SubResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="butt"]
+margin_left = -20.0
+margin_top = -29.1534
+margin_right = 20.0
+margin_bottom = 2.84664
+rect_pivot_offset = Vector2( 20, 16 )
+color = Color( 0.462745, 0.262745, 0.262745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpiderLegBase" type="Sprite" parent="."]
+position = Vector2( 32.304, -7.19806 )
+scale = Vector2( 0.437771, 0.437771 )
+texture = ExtResource( 2 )
+
+[node name="gracz" type="RigidBody2D" parent="."]
+collision_mask = 4
+mode = 2
+mass = 2.0
+gravity_scale = 40.42
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="gracz"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gracz"]
+position = Vector2( 0, 1.55311 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="gracz"]
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="gracz"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gracz/Area2D"]
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="gracz/Area2D"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Pajeczyna" type="Line2D" parent="gracz"]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="gracz"]
+cast_to = Vector2( 0, 160 )
+collision_mask = 4
+
+[node name="Light2D" type="Light2D" parent="gracz"]
+texture = ExtResource( 9 )
+texture_scale = 0.5
+color = Color( 1, 0.72549, 0, 1 )
+energy = 0.5
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../gracz")
+node_b = NodePath("../butt")
+
+[connection signal="body_exited" from="gracz/Area2D" to="gracz" method="_on_Area2D_body_exited"]
