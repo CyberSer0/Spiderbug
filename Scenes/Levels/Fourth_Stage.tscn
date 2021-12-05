@@ -1,0 +1,483 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Assets/Textures/Pipes/tilemap.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/Building/srubka.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Pipes/fill.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Pipes/rusty_fill.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Entities/PlayerB/Player.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Levels/Scripts/Third_Stage_Entrance.gd" type="Script" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1112, 464 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 127.995, 2664 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 784, 696 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 192, 80 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 384, 856 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 2112.82, 253.445 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 1082.7, 1080 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 288, 64 )
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0.278146, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
+
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0.482639, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 78.0374, 115.351 )
+
+[sub_resource type="TileSet" id=14]
+0/name = "tilemap.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "tilemap.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 128, 0, 128, 128 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "tilemap.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 256, 0, 128, 128 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "tilemap.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 384, 0, 128, 128 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="CircleShape2D" id=15]
+radius = 16.1941
+
+[node name="Second_Stage" type="Node2D"]
+position = Vector2( 0, 2037.5 )
+
+[node name="World_Walls" type="Node2D" parent="."]
+visible = false
+position = Vector2( 150, 400 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World_Walls"]
+position = Vector2( 0.774597, 0.774658 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( -1390.77, 5441.73 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( 1217.23, 5441.73 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( -2590.77, 2705.73 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( 1529.23, 3121.73 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( 761.225, -582.275 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( -86.7746, 5825.73 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( -214.775, -1078.27 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( -790.775, -750.275 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( -2070, -750 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( 1513.23, 129.725 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( 2537.23, 1697.73 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( 2409.23, 4417.73 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( 171.488, 749.202 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( -854.775, 2737.73 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="World_Walls/StaticBody2D"]
+position = Vector2( -1422.77, -1614.27 )
+shape = SubResource( 8 )
+
+[node name="Player" parent="." instance=ExtResource( 14 )]
+position = Vector2( -64.5618, -416.183 )
+
+[node name="Entrance" type="TextureRect" parent="."]
+margin_left = 157.0
+margin_top = -596.0
+margin_right = 364.0
+margin_bottom = -317.0
+rect_rotation = 89.9999
+rect_scale = Vector2( 3.53743, 1.51743 )
+texture = SubResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.713726, 0.729412, 0.960784, 1 )
+
+[node name="Exit" type="TextureRect" parent="."]
+margin_left = -1552.0
+margin_top = 1386.5
+margin_right = -1468.0
+margin_bottom = 1435.5
+rect_scale = Vector2( 5, 14 )
+texture = SubResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D2" type="Area2D" parent="Exit"]
+position = Vector2( 17.3672, 21.178 )
+rotation = 3.14159
+scale = Vector2( 0.275015, 0.288293 )
+collision_layer = 4
+script = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/Area2D2"]
+position = Vector2( -15.4897, -2.94093 )
+shape = SubResource( 13 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 0.7 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, 4536 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 4800, 7456 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 14 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( -589836, 1, 0, -589835, 1, 0, -589834, 1, 0, -589833, 1, 0, -524301, 3, 0, -524296, 2, 0, -458765, 3, 0, -458760, 2, 0, -393229, 3, 0, -393224, 2, 0, -327693, 3, 0, -327688, 2, 0, -262157, 3, 0, -262152, 2, 0, -262147, 3, 0, -327679, 2, 0, -196621, 3, 0, -196616, 2, 0, -196611, 3, 0, -262143, 2, 0, -131085, 3, 0, -131080, 2, 0, -131075, 3, 0, -196607, 2, 0, -65549, 3, 0, -65544, 2, 0, -65539, 3, 0, -131071, 2, 0, -13, 3, 0, -8, 2, 0, -3, 3, 0, -65535, 2, 0, 65523, 3, 0, 65528, 2, 0, 65533, 3, 0, 1, 2, 0, 131059, 3, 0, 131064, 2, 0, 131069, 3, 0, 65537, 2, 0, 196595, 3, 0, 196600, 2, 0, 196605, 3, 0, 131073, 2, 0, 262126, 1, 0, 262127, 1, 0, 262128, 1, 0, 262129, 1, 0, 262130, 1, 0, 262136, 1, 0, 262137, 1, 0, 262138, 1, 0, 262139, 1, 0, 262140, 1, 0, 262141, 3, 0, 196609, 2, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 327661, 3, 0, 262154, 2, 0, 393197, 3, 0, 327690, 2, 0, 458733, 3, 0, 393226, 2, 0, 524269, 3, 0, 524274, 2, 0, 524275, 0, 0, 524276, 0, 0, 524277, 0, 0, 524278, 0, 0, 524279, 0, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 0, 524285, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 589805, 3, 0, 589810, 2, 0, 655341, 3, 0, 655346, 2, 0, 720877, 3, 0, 720882, 2, 0, 720884, 1, 0, 720885, 1, 0, 720886, 1, 0, 720887, 1, 0, 720888, 1, 0, 720889, 1, 0, 720890, 1, 0, 720891, 1, 0, 720892, 1, 0, 720893, 1, 0, 720894, 1, 0, 720895, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 786413, 3, 0, 786418, 2, 0, 786419, 3, 0, 720914, 2, 0, 851949, 3, 0, 851954, 2, 0, 851955, 3, 0, 786450, 2, 0, 917485, 3, 0, 917490, 2, 0, 917491, 3, 0, 851986, 2, 0, 983021, 3, 0, 983026, 2, 0, 983027, 3, 0, 917522, 2, 0, 1048557, 3, 0, 1048562, 2, 0, 1048563, 3, 0, 983058, 2, 0, 1114093, 3, 0, 1114098, 2, 0, 1114100, 0, 0, 1114101, 0, 0, 1114102, 0, 0, 1114103, 0, 0, 1114104, 0, 0, 1114105, 0, 0, 1114106, 0, 0, 1114107, 0, 0, 1114108, 0, 0, 1114109, 0, 0, 1114110, 0, 0, 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048594, 2, 0, 1179629, 3, 0, 1179634, 2, 0, 1114114, 3, 0, 1114130, 2, 0, 1245165, 3, 0, 1245170, 2, 0, 1179650, 3, 0, 1179666, 2, 0, 1310701, 3, 0, 1310706, 2, 0, 1245186, 3, 0, 1245202, 2, 0, 1376237, 3, 0, 1376242, 2, 0, 1310722, 3, 0, 1310738, 2, 0, 1441773, 3, 0, 1441778, 2, 0, 1376258, 3, 0, 1376274, 2, 0, 1507309, 3, 0, 1507314, 2, 0, 1441794, 3, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441805, 0, 0, 1441806, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1572845, 3, 0, 1572850, 2, 0, 1507330, 3, 0, 1507335, 2, 0, 1638381, 3, 0, 1638386, 2, 0, 1572866, 3, 0, 1572871, 2, 0, 1703917, 3, 0, 1703922, 2, 0, 1638402, 3, 0, 1638407, 2, 0, 1769453, 3, 0, 1769458, 2, 0, 1703938, 3, 0, 1703943, 2, 0, 1834989, 3, 0, 1834994, 2, 0, 1769474, 3, 0, 1769479, 2, 0, 1900525, 3, 0, 1900530, 2, 0, 1835010, 3, 0, 1835015, 2, 0, 1966061, 3, 0, 1966066, 2, 0, 1900546, 3, 0, 1900551, 2, 0, 2031597, 3, 0, 2031602, 2, 0, 1966082, 3, 0, 1966087, 2, 0, 2097133, 3, 0, 2097138, 2, 0, 2031618, 3, 0, 2031623, 2, 0, 2162669, 3, 0, 2162674, 2, 0, 2162675, 1, 0, 2162676, 1, 0, 2162677, 1, 0, 2162678, 1, 0, 2162679, 1, 0, 2162680, 1, 0, 2162681, 1, 0, 2162682, 1, 0, 2162683, 1, 0, 2162684, 1, 0, 2162685, 1, 0, 2162686, 1, 0, 2162687, 1, 0, 2097152, 1, 0, 2097153, 1, 0, 2097154, 3, 0, 2097159, 1, 0, 2097160, 1, 0, 2097161, 1, 0, 2097162, 1, 0, 2097163, 1, 0, 2097164, 1, 0, 2097165, 1, 0, 2097166, 1, 0, 2097167, 1, 0, 2097168, 1, 0, 2228205, 3, 0, 2228210, 2, 0, 2162705, 2, 0, 2293741, 3, 0, 2293746, 2, 0, 2228241, 2, 0, 2359277, 3, 0, 2359282, 2, 0, 2293777, 2, 0, 2424813, 3, 0, 2424818, 2, 0, 2359313, 2, 0, 2490349, 3, 0, 2490354, 1, 0, 2490355, 1, 0, 2490356, 1, 0, 2490357, 1, 0, 2490358, 1, 0, 2490359, 1, 0, 2490360, 1, 0, 2490361, 1, 0, 2490362, 1, 0, 2490363, 1, 0, 2490364, 1, 0, 2490365, 1, 0, 2490366, 1, 0, 2490367, 1, 0, 2424832, 1, 0, 2424833, 1, 0, 2424834, 1, 0, 2424835, 1, 0, 2424836, 1, 0, 2424837, 1, 0, 2424838, 1, 0, 2424839, 1, 0, 2424840, 1, 0, 2424841, 1, 0, 2424842, 1, 0, 2424849, 2, 0, 2555885, 3, 0, 2490385, 2, 0, 2621421, 3, 0, 2555921, 2, 0, 2686957, 3, 0, 2621457, 2, 0, 2752493, 3, 0, 2686993, 2, 0, 2818030, 0, 0, 2818031, 0, 0, 2818032, 0, 0, 2818033, 0, 0, 2818034, 0, 0, 2818035, 0, 0, 2818036, 0, 0, 2818037, 0, 0, 2818038, 0, 0, 2818039, 0, 0, 2818040, 0, 0, 2818041, 0, 0, 2818042, 0, 0, 2818043, 0, 0, 2818044, 0, 0, 2818045, 0, 0, 2818046, 0, 0, 2752514, 0, 0, 2752515, 0, 0, 2752516, 0, 0, 2752517, 0, 0, 2752518, 0, 0, 2752519, 0, 0, 2752520, 0, 0, 2752521, 0, 0, 2752522, 0, 0, 2752523, 0, 0, 2752524, 0, 0, 2752525, 0, 0, 2752526, 0, 0, 2752527, 0, 0, 2752528, 0, 0, 2883582, 3, 0, 2818050, 2, 0, 2949118, 3, 0, 2883586, 2, 0, 3014654, 3, 0, 2949122, 2, 0, 3080190, 3, 0, 3014658, 2, 0, 3145726, 3, 0, 3080194, 2, 0, 3211263, 0, 0, 3145728, 0, 0, 3145729, 0, 0 )
+
+[node name="Sruby" type="Node2D" parent="."]
+
+[node name="sruba1" type="StaticBody2D" parent="Sruby"]
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba1"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba1"]
+shape = SubResource( 15 )
+
+[node name="sruba2" type="StaticBody2D" parent="Sruby"]
+position = Vector2( -152, 282.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba2"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba2"]
+shape = SubResource( 15 )
+
+[node name="sruba3" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 56, 514.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba3"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba3"]
+shape = SubResource( 15 )
+
+[node name="sruba4" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 48, 5250.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba4"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba4"]
+shape = SubResource( 15 )
+
+[node name="sruba5" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 56, 5002.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba5"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba5"]
+shape = SubResource( 15 )
+
+[node name="sruba6" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 1936, 5162.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba6"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba6"]
+shape = SubResource( 15 )
+
+[node name="sruba7" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 1624, 4882.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba7"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba7"]
+shape = SubResource( 15 )
+
+[node name="sruba8" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 1928, 4570.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba8"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba8"]
+shape = SubResource( 15 )
+
+[node name="sruba9" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 1256, 4450.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba9"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba9"]
+shape = SubResource( 15 )
+
+[node name="sruba10" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 768, 4666.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba10"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba10"]
+shape = SubResource( 15 )
+
+[node name="sruba11" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 608, 4234.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba11"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba11"]
+shape = SubResource( 15 )
+
+[node name="sruba12" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 784, 3970.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba12"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba12"]
+shape = SubResource( 15 )
+
+[node name="sruba13" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 536, 3762.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba13"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba13"]
+shape = SubResource( 15 )
+
+[node name="sruba14" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 752, 3490.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba14"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba14"]
+shape = SubResource( 15 )
+
+[node name="sruba15" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 504, 3178.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba15"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba15"]
+shape = SubResource( 15 )
+
+[node name="sruba16" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 752, 2850.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba16"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba16"]
+shape = SubResource( 15 )
+
+[node name="sruba17" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 504, 2498.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba17"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba17"]
+shape = SubResource( 15 )
+
+[node name="sruba18" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 416, 4522.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba18"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba18"]
+shape = SubResource( 15 )
+
+[node name="sruba19" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 2192, 2610.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba19"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba19"]
+shape = SubResource( 15 )
+
+[node name="sruba20" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 1936, 2362.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba20"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba20"]
+shape = SubResource( 15 )
+
+[node name="sruba21" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 2112, 2138.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba21"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba21"]
+shape = SubResource( 15 )
+
+[node name="sruba22" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 1936, 1938.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba22"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba22"]
+shape = SubResource( 15 )
+
+[node name="sruba23" type="StaticBody2D" parent="Sruby"]
+position = Vector2( 2104, 1666.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba23"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba23"]
+shape = SubResource( 15 )
+
+[node name="sruba24" type="StaticBody2D" parent="Sruby"]
+position = Vector2( -432, 722.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba24"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba24"]
+shape = SubResource( 15 )
+
+[node name="sruba25" type="StaticBody2D" parent="Sruby"]
+position = Vector2( -888, 722.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba25"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba25"]
+shape = SubResource( 15 )
+
+[node name="sruba26" type="StaticBody2D" parent="Sruby"]
+position = Vector2( -1432, 722.5 )
+
+[node name="Sprite" type="Sprite" parent="Sruby/sruba26"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sruby/sruba26"]
+shape = SubResource( 15 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = -1
+texture = ExtResource( 4 )
+polygon = PoolVector2Array( -272, -597.5, 144, -597.5, 144, 498.5, 1296, 498.5, 1296, 906.5, -1776, 914.5, -1776, 1394.5, -1776, 4218.5, 376, 4210.5, 368, 2066.5, -1552, 2066.5, -1552.91, 1394.5, 2320, 1394.5, 2320, 2842.5, 912, 2834.5, 912, 4210.5, 2184, 4202.5, 2184, 5394.5, 264, 5394.5, 272, 6170.5, -144, 6162.5, -144, 5394.5, -2328, 5394.5, -2320, 482.5, -1544, 474.5, -1536, -1173.5, -1000, -1165.5, -1008, 498.5, -272, 498.5 )
+
+[connection signal="body_entered" from="Exit/Area2D2" to="Exit/Area2D2" method="_on_Area2D_body_entered"]

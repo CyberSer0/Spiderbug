@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export var vel = 900
+export var vel = 100
 var dlugoscNogi = 152
 var kosci = []
 var kostki = []
@@ -12,22 +12,20 @@ func _ready():
 		kostki.append(get_node("Skeleton2D/Bone2D/" + String(i) + "/" + String(i)))
 	set_physics_process(true)
 
-func _physics_process(_delta):
-	self.mass = 2
+func _integrate_forces(state):
 	if Input.is_action_pressed("move_left"):
-		set_axis_velocity(Vector2(-vel,0))
+		apply_central_impulse(Vector2(-vel,0))
 	elif Input.is_action_pressed("move_right"):
-		set_axis_velocity(Vector2(vel,0))
+		apply_central_impulse(Vector2(vel,0))
 	elif Input.is_action_pressed("move_up"):
-		set_axis_velocity(Vector2(0,-vel))
+		apply_central_impulse(Vector2(0,-vel))
 	elif Input.is_action_pressed("move_down"):
-		set_axis_velocity(Vector2(0,vel))
+		apply_central_impulse(Vector2(0,vel))
 	if Input.is_action_pressed("ui_select"):
 		gdzieWrog = Vector2(0,0) #jak nie ma wroga to strzelamy w 0,0
 		$Pajeczyna.points[1] = to_local(gdzieWrog)
-
 	else:
-		self.mass = 0.01
+		self.mass = 1
 	for i in range(8):
 		var poz = get_parent().get_node("noga" + String(i+1)).get_global_position()
 		var odleglosc = self.global_position.distance_to(poz)
@@ -40,6 +38,9 @@ func _physics_process(_delta):
 			kosci[i].set_rotation(self.global_position.direction_to(poz).angle() - kat)
 			kostki[i].set_rotation(kat*2)
 			kostki[i].set_scale(Vector2(1, 1))
+
+func _physics_process(_delta):
+	pass
 
 func _on_Area2D_body_exited(body):
 	for i in range(8):
