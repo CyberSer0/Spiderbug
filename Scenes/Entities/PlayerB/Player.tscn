@@ -1,0 +1,397 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Entities/PlayerB/gracz.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30, 30 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 400.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="gracz" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="gracz"]
+position = Vector2( 0, -25 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D2" type="Polygon2D" parent="gracz"]
+position = Vector2( 90, -25 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D3" type="Polygon2D" parent="gracz"]
+position = Vector2( 0, -25 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D4" type="Polygon2D" parent="gracz"]
+position = Vector2( 90, -25 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D5" type="Polygon2D" parent="gracz"]
+position = Vector2( 0, -25 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D6" type="Polygon2D" parent="gracz"]
+position = Vector2( 90, -25 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D7" type="Polygon2D" parent="gracz"]
+position = Vector2( 0, -25 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D8" type="Polygon2D" parent="gracz"]
+position = Vector2( 90, -25 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D9" type="Polygon2D" parent="gracz"]
+position = Vector2( 0, -25 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D10" type="Polygon2D" parent="gracz"]
+position = Vector2( 90, -25 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D11" type="Polygon2D" parent="gracz"]
+position = Vector2( 0, -25 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D12" type="Polygon2D" parent="gracz"]
+position = Vector2( 90, -25 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D13" type="Polygon2D" parent="gracz"]
+position = Vector2( 0, -25 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D14" type="Polygon2D" parent="gracz"]
+position = Vector2( 90, -25 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D15" type="Polygon2D" parent="gracz"]
+position = Vector2( 0, -25 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 1, 1, 1, 1 ), NodePath("Bone2D/7/7"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="Polygon2D16" type="Polygon2D" parent="gracz"]
+position = Vector2( 90, -25 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+uv = PoolVector2Array( 0, 20, 0, 30, 60, 30, 60, 20 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/0/0"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/1/1"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/2/2"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/3/3"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/4/4"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/5/5"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/6/6"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7"), PoolRealArray( 0, 0, 0, 0 ), NodePath("Bone2D/7/7"), PoolRealArray( 1, 1, 1, 1 ) ]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="gracz"]
+
+[node name="Bone2D" type="Bone2D" parent="gracz/Skeleton2D"]
+rest = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="0" type="Bone2D" parent="gracz/Skeleton2D/Bone2D"]
+position = Vector2( 4, 0 )
+rest = Transform2D( 1, 0, 0, 1, 4, 0 )
+
+[node name="0" type="Bone2D" parent="gracz/Skeleton2D/Bone2D/0"]
+position = Vector2( 82, 0 )
+rest = Transform2D( 1, 0, 0, 1, 82, 0 )
+default_length = 70.0
+
+[node name="1" type="Bone2D" parent="gracz/Skeleton2D/Bone2D"]
+position = Vector2( 4, 0 )
+rest = Transform2D( 1, 0, 0, 1, 4, 0 )
+
+[node name="1" type="Bone2D" parent="gracz/Skeleton2D/Bone2D/1"]
+position = Vector2( 82, 0 )
+rest = Transform2D( 1, 0, 0, 1, 82, 0 )
+default_length = 70.0
+
+[node name="2" type="Bone2D" parent="gracz/Skeleton2D/Bone2D"]
+position = Vector2( 4, 0 )
+rest = Transform2D( 1, 0, 0, 1, 4, 0 )
+
+[node name="2" type="Bone2D" parent="gracz/Skeleton2D/Bone2D/2"]
+position = Vector2( 82, 0 )
+rest = Transform2D( 1, 0, 0, 1, 82, 0 )
+default_length = 70.0
+
+[node name="3" type="Bone2D" parent="gracz/Skeleton2D/Bone2D"]
+position = Vector2( 4, 0 )
+rest = Transform2D( 1, 0, 0, 1, 4, 0 )
+
+[node name="3" type="Bone2D" parent="gracz/Skeleton2D/Bone2D/3"]
+position = Vector2( 82, 0 )
+rest = Transform2D( 1, 0, 0, 1, 82, 0 )
+default_length = 70.0
+
+[node name="4" type="Bone2D" parent="gracz/Skeleton2D/Bone2D"]
+position = Vector2( 4, 0 )
+rest = Transform2D( 1, 0, 0, 1, 4, 0 )
+
+[node name="4" type="Bone2D" parent="gracz/Skeleton2D/Bone2D/4"]
+position = Vector2( 82, 0 )
+rest = Transform2D( 1, 0, 0, 1, 82, 0 )
+default_length = 70.0
+
+[node name="5" type="Bone2D" parent="gracz/Skeleton2D/Bone2D"]
+position = Vector2( 4, 0 )
+rest = Transform2D( 1, 0, 0, 1, 4, 0 )
+
+[node name="5" type="Bone2D" parent="gracz/Skeleton2D/Bone2D/5"]
+position = Vector2( 82, 0 )
+rest = Transform2D( 1, 0, 0, 1, 82, 0 )
+default_length = 70.0
+
+[node name="6" type="Bone2D" parent="gracz/Skeleton2D/Bone2D"]
+position = Vector2( 4, 0 )
+rest = Transform2D( 1, 0, 0, 1, 4, 0 )
+
+[node name="6" type="Bone2D" parent="gracz/Skeleton2D/Bone2D/6"]
+position = Vector2( 82, 0 )
+rest = Transform2D( 1, 0, 0, 1, 82, 0 )
+default_length = 70.0
+
+[node name="7" type="Bone2D" parent="gracz/Skeleton2D/Bone2D"]
+position = Vector2( 4, 0 )
+rest = Transform2D( 1, 0, 0, 1, 4, 0 )
+
+[node name="7" type="Bone2D" parent="gracz/Skeleton2D/Bone2D/7"]
+position = Vector2( 82, 0 )
+rest = Transform2D( 1, 0, 0, 1, 82, 0 )
+default_length = 70.0
+
+[node name="Camera2D" type="Camera2D" parent="gracz"]
+current = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gracz"]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Sprite" type="Sprite" parent="gracz"]
+modulate = Color( 0.827451, 0, 1, 1 )
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="gracz"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gracz/Area2D"]
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="gracz/Area2D"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Pajeczyna" type="Line2D" parent="gracz"]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="noga1" type="RigidBody2D" parent="."]
+position = Vector2( 101.495, -132.481 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="noga1"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="noga1"]
+modulate = Color( 1, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="noga2" type="RigidBody2D" parent="."]
+modulate = Color( 1, 0.478431, 0, 1 )
+position = Vector2( 170.384, -15.4957 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="noga2"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="noga2"]
+texture = ExtResource( 1 )
+
+[node name="noga3" type="RigidBody2D" parent="."]
+position = Vector2( 153.023, 85.4382 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="noga3"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="noga3"]
+texture = ExtResource( 1 )
+
+[node name="noga4" type="RigidBody2D" parent="."]
+position = Vector2( 74.6115, 175.124 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="noga4"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="noga4"]
+texture = ExtResource( 1 )
+
+[node name="noga5" type="RigidBody2D" parent="."]
+position = Vector2( -85.6471, -115.931 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="noga5"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="noga5"]
+texture = ExtResource( 1 )
+
+[node name="noga6" type="RigidBody2D" parent="."]
+position = Vector2( -152.503, -32.598 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="noga6"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="noga6"]
+texture = ExtResource( 1 )
+
+[node name="noga7" type="RigidBody2D" parent="."]
+position = Vector2( -148.548, 64.5506 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="noga7"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="noga7"]
+texture = ExtResource( 1 )
+
+[node name="noga8" type="RigidBody2D" parent="."]
+position = Vector2( -74.5472, 159.932 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="noga8"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="noga8"]
+texture = ExtResource( 1 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../gracz")
+node_b = NodePath("../noga1")
+softness = 16.0
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+node_a = NodePath("../gracz")
+node_b = NodePath("../noga2")
+softness = 16.0
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+node_a = NodePath("../gracz")
+node_b = NodePath("../noga3")
+softness = 16.0
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+node_a = NodePath("../gracz")
+node_b = NodePath("../noga4")
+softness = 16.0
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="."]
+node_a = NodePath("../gracz")
+node_b = NodePath("../noga5")
+softness = 16.0
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="."]
+node_a = NodePath("../gracz")
+node_b = NodePath("../noga6")
+softness = 16.0
+
+[node name="PinJoint2D7" type="PinJoint2D" parent="."]
+node_a = NodePath("../gracz")
+node_b = NodePath("../noga7")
+softness = 16.0
+
+[node name="PinJoint2D8" type="PinJoint2D" parent="."]
+node_a = NodePath("../gracz")
+node_b = NodePath("../noga8")
+softness = 16.0
+
+[connection signal="body_exited" from="gracz/Area2D" to="gracz" method="_on_Area2D_body_exited"]
